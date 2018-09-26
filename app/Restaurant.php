@@ -18,13 +18,13 @@ class Restaurant extends Model
     }
 
     /**
-     * Restaurant belongs to User.
+     * Restaurant belongs to Owner.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user()
+    public function owner()
     {
-      // belongsTo(RelatedModel, foreignKey = user_id, keyOnRelatedModel = id)
-      return $this->belongsTo(User::class);
+      // belongsTo(RelatedModel, foreignKey = owner_id, keyOnRelatedModel = id)
+      return $this->belongsTo(User::class, 'user_id');
     }
 }
