@@ -27,4 +27,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * User has one Restaurant.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function restaurant()
+    {
+        // hasOne(RelatedModel, foreignKeyOnRelatedModel = user_id, localKey = id)
+        return $this->hasOne(Restaurant::class);
+    }
 }
