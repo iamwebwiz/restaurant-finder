@@ -4,14 +4,11 @@
 
 <head>
     <meta charset="utf-8" />
-    <!-- <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png"> -->
-    <!-- <link rel="icon" type="image/png" href="../assets/img/favicon.ico"> -->
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Restaurant Finder</title>
+    <title>Light Bootstrap Dashboard - Free Bootstrap 4 Admin Dashboard by Creative Tim</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
@@ -22,16 +19,16 @@
 
 <body>
     <div class="wrapper" id="app">
-        <div class="sidebar">
+        <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
             <!--
-                Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
-                Tip 2: you can also add an image using data-image tag
-            -->
+        Tip 2: you can also add an image using data-image tag
+    -->
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="http://www.creative-tim.com" class="simple-text">
-                        {{Auth::user()->name}}
+                        Creative Tim
                     </a>
                 </div>
                 <ul class="nav">
@@ -41,22 +38,12 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
-
                     <li>
                         <a class="nav-link" href="./user.html">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>User Profile</p>
                         </a>
                     </li>
-
-                    @if(Auth::user()->role == 1)
-                    <li>
-                        <a class="nav-link" href="./user.html">
-                            <i class="nc-icon nc-circle-09"></i>
-                            <p>Restaurant Profile</p>
-                        </a>
-                    </li>
-                    @endif
                     <li>
                         <a class="nav-link" href="./table.html">
                             <i class="nc-icon nc-notes"></i>
@@ -96,8 +83,6 @@
                 </ul>
             </div>
         </div>
-
-
         <div class="main-panel">
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
@@ -172,10 +157,9 @@
                 </div>
             </nav>
             <!-- End Navbar -->
-
             {{-- this is where vue injects the page content --}}
             <div class="content">
-                @yield('content')
+                <router-view></router-view>
             </div>
             <footer class="footer">
                 <div class="container">
@@ -207,7 +191,7 @@
                             {{-- <script>
                                 document.write(new Date().getFullYear())
                             </script> --}}
-                            <a href="http://www.creative-tim.com">{{Auth::user()->name}}</a>, made with love for a better web
+                            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
                         </p>
                     </nav>
                 </div>

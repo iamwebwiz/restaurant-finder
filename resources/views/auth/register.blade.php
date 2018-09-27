@@ -40,6 +40,14 @@
                         </div>
 
                         <div class="form-group row">
+                            <div class="col-md-4"></div>
+                            <div class="custom-control col-md-6 mx-3 custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="ownsRestaurant" name="ownsRestaurant">
+                              <label class="custom-control-label" for="ownsRestaurant">I own a restaurant?</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
