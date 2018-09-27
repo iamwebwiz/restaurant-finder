@@ -1,6 +1,5 @@
 ## Restaurant Finder
->> Restaurant finder is a web app that allows you to search for restaurants having certaind kind(s) of food,
-allows you to view all food items available in a restaurant and make contact to the restaurant to get food delivered.
+> *Restaurant finder is a web app that allows you to search for restaurants having certain kind(s) of food, allows you to view all food items available in a restaurant and make contact to the restaurant to get food delivered.*
 
 ### Tools
 - Laravel
