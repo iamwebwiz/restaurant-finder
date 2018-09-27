@@ -24,16 +24,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        switch (Auth::user()->role) {
-            case 2:
-                return view('home.admin');
-                break;
-            case 1:
-                return view('home.rest_owner');
-                break;
-            default:
-                return view('home.default');
-                break;
-        }
+        // switch (Auth::user()->role) {
+        //     case 2:
+        //         return view('home.admin');
+        //         break;
+        //     case 1:
+        //         return view('home.app');
+        //         break;
+        //     default:
+        //         return view('home.default');
+        //         break;
+        // }
+        return view('home.default');
     }
 }

@@ -8,10 +8,12 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     {
-      path: '/',
+      path: '/home',
       component: RestaurantOwner
     }
-  ]
+  ],
+  mode: 'history',
+  base: '/app',
 })
 
 export default router

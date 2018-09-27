@@ -1,212 +1,151 @@
 <template>
-  
+
   <div class="container-fluid">
       <div class="row">
-          <div class="col-md-4">
-              <div class="card ">
-                  <div class="card-header ">
-                      <h4 class="card-title">Email Statistics</h4>
-                      <p class="card-category">Last Campaign Performance</p>
-                  </div>
-                  <div class="card-body ">
-                      <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
-                  </div>
-                  <div class="card-footer ">
-                      <div class="legend">
-                          <i class="fa fa-circle text-info"></i> Open
-                          <i class="fa fa-circle text-danger"></i> Bounce
-                          <i class="fa fa-circle text-warning"></i> Unsubscribe
-                      </div>
-                      <hr/>
-                      <div class="stats">
-                          <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
-                      </div>
-                  </div>
-              </div>
-          </div>
           <div class="col-md-8">
-              <div class="card ">
-                  <div class="card-header ">
-                      <h4 class="card-title">Users Behavior</h4>
-                      <p class="card-category">24 Hours performance</p>
+              <div class="card">
+                  <div class="card-header">
+                      <h4 class="card-title">Edit Profile</h4>
                   </div>
-                  <div class="card-body ">
-                      <div id="chartHours" class="ct-chart"></div>
-                  </div>
-                  <div class="card-footer ">
-                      <div class="legend">
-                          <i class="fa fa-circle text-info"></i> Open
-                          <i class="fa fa-circle text-danger"></i> Click
-                          <i class="fa fa-circle text-warning"></i> Click Second Time
-                      </div>
-                      <hr/>
-                      <div class="stats">
-                          <i class="fa fa-history"></i> Updated 3 minutes ago
-                      </div>
+                  <div class="card-body">
+                      <form>
+                          <div class="row">
+                              <div class="col-md-5 pr-1">
+                                  <div class="form-group">
+                                      <label>Company (disabled)</label>
+                                      <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                                  </div>
+                              </div>
+                              <div class="col-md-3 px-1">
+                                  <div class="form-group">
+                                      <label>Username</label>
+                                      <input type="text" class="form-control" placeholder="Username" v-model="username">
+                                  </div>
+                              </div>
+                              <div class="col-md-4 pl-1">
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">Email address</label>
+                                      <input type="email" class="form-control" placeholder="Email">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6 pr-1">
+                                  <div class="form-group">
+                                      <label>First Name</label>
+                                      <input type="text" class="form-control" placeholder="Company" value="Mike">
+                                  </div>
+                              </div>
+                              <div class="col-md-6 pl-1">
+                                  <div class="form-group">
+                                      <label>Last Name</label>
+                                      <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label>Address</label>
+                                      <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-4 pr-1">
+                                  <div class="form-group">
+                                      <label>City</label>
+                                      <input type="text" class="form-control" placeholder="City" value="Mike">
+                                  </div>
+                              </div>
+                              <div class="col-md-4 px-1">
+                                  <div class="form-group">
+                                      <label>Country</label>
+                                      <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                                  </div>
+                              </div>
+                              <div class="col-md-4 pl-1">
+                                  <div class="form-group">
+                                      <label>Postal Code</label>
+                                      <input type="number" class="form-control" placeholder="ZIP Code">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label>About Me</label>
+                                      <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                  </div>
+                              </div>
+                          </div>
+                          <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                          <div class="clearfix"></div>
+                      </form>
                   </div>
               </div>
           </div>
-      </div>
-      <div class="row">
-          <div class="col-md-6">
-              <div class="card ">
-                  <div class="card-header ">
-                      <h4 class="card-title">2017 Sales</h4>
-                      <p class="card-category">All products including Taxes</p>
+          <div class="col-md-4">
+              <div class="card card-user">
+                  <div class="card-image">
+                      <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="...">
                   </div>
-                  <div class="card-body ">
-                      <div id="chartActivity" class="ct-chart"></div>
-                  </div>
-                  <div class="card-footer ">
-                      <div class="legend">
-                          <i class="fa fa-circle text-info"></i> Tesla Model S
-                          <i class="fa fa-circle text-danger"></i> BMW 5 Series
+                  <div class="card-body">
+                      <div class="author">
+                          <a href="#">
+                              <img class="avatar border-gray" src="https://banner2.kisspng.com/20180509/zde/kisspng-avatar-youtube-8-ball-pool-user-5af328dc1be026.0480517715258851481142.jpg" alt="...">
+                              <h5 class="title">Mike Andrew</h5>
+                          </a>
+                          <p class="description">
+                              {{changed_username}}
+                          </p>
                       </div>
-                      <hr/>
-                      <div class="stats">
-                          <i class="fa fa-check"></i> Data information certified
-                      </div>
+                      <p class="description text-center">
+                          "Lamborghini Mercy
+                          <br> Your chick she so thirsty
+                          <br> I'm in that two seat Lambo"
+                      </p>
                   </div>
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="card  card-tasks">
-                  <div class="card-header ">
-                      <h4 class="card-title">Tasks</h4>
-                      <p class="card-category">Backend development</p>
-                  </div>
-                  <div class="card-body ">
-                      <div class="table-full-width">
-                          <table class="table">
-                              <tbody>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" value="">
-                                                  <span class="form-check-sign"></span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                      <td class="td-actions text-right">
-                                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                              <i class="fa fa-edit"></i>
-                                          </button>
-                                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                              <i class="fa fa-times"></i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                                  <span class="form-check-sign"></span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                      <td class="td-actions text-right">
-                                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                              <i class="fa fa-edit"></i>
-                                          </button>
-                                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                              <i class="fa fa-times"></i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                                  <span class="form-check-sign"></span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                                      </td>
-                                      <td class="td-actions text-right">
-                                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                              <i class="fa fa-edit"></i>
-                                          </button>
-                                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                              <i class="fa fa-times"></i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" checked>
-                                                  <span class="form-check-sign"></span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                                      <td class="td-actions text-right">
-                                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                              <i class="fa fa-edit"></i>
-                                          </button>
-                                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                              <i class="fa fa-times"></i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" value="">
-                                                  <span class="form-check-sign"></span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Read "Following makes Medium better"</td>
-                                      <td class="td-actions text-right">
-                                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                              <i class="fa fa-edit"></i>
-                                          </button>
-                                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                              <i class="fa fa-times"></i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" value="" disabled>
-                                                  <span class="form-check-sign"></span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Unfollow 5 enemies from twitter</td>
-                                      <td class="td-actions text-right">
-                                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                              <i class="fa fa-edit"></i>
-                                          </button>
-                                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                              <i class="fa fa-times"></i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-                  <div class="card-footer ">
-                      <hr>
-                      <div class="stats">
-                          <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
-                      </div>
+                  <hr>
+                  <div class="button-container mr-auto ml-auto">
+                      <button href="#" class="btn btn-simple btn-link btn-icon">
+                          <i class="fa fa-facebook-square"></i>
+                      </button>
+                      <button href="#" class="btn btn-simple btn-link btn-icon">
+                          <i class="fa fa-twitter"></i>
+                      </button>
+                      <button href="#" class="btn btn-simple btn-link btn-icon">
+                          <i class="fa fa-google-plus-square"></i>
+                      </button>
                   </div>
               </div>
           </div>
       </div>
   </div>
 
+
 </template>
+
+<script>
+  // import { mapState } from 'vuex'
+
+
+  export default {
+
+      data () {
+        return {
+            username: "Santiago" + "abc"
+        }
+
+    },
+
+    computed : {
+    //   ...mapState({
+    //     user: state => state.user
+    //   })
+
+        changed_username (){ return this.username + "abc"}
+
+    }
+  }
+</script>
