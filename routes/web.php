@@ -17,4 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/app', 'HomeController@index')->name('home');
+
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'app', 'as' => 'app.'], function () {
+  Route::get('/{any}', 'HomeController@index')->where('any', '.*');
+});
+
+
+
+
